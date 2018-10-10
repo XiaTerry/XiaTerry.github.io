@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+img{
+    border: 0;
+}
+.wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+@font-face{
+    font-family: "Nunito-Bold";
+    src:  url('../fonts/Nunito-Bold.ttf') format('truetype');
+}
+#header{
+    height: 500px;
+    background-color: #deecdf;
+    text-align: center;
+}
+#header img{
+    margin-top: 80px;
+}
+.nunito-bold{
+    font-family: "Nunito-Bold";
+}
+#study-skill{
+    margin-top: 30px;
+}
+#study-skill .wrapper{
+    height: 354px;
+    margin-top:50px;
+    /*background: #ff00ff;*/
+}
+
+.study, .skill{
+    width: 470px;
+    height: 370px;
+}
+.study{
+    float: left;
+    margin: auto 20px;
+}
+.skill{
+    float: right;
+}
+.exclamatory{
+    color: #00CFBD;
+}
+.study-list li{
+    color: #393b3a;
+    height: 22px;
+    margin-top: 20px;
+}
+.study-list .year{
+    color: #9CA69D;
+    font-weight: bolder;
+    float: right;
+}
+.study-list .content{
+    width: 400px;
+    overflow: hidden;
+    float: left;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.skill .progress{
+    width: 440px;
+    height: 20px;
+    background-color: #F5F5F5;
+    margin-top: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.skill h4{
+    margin-top: 10px;
+}
+.skill .progress div{
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+}
+.skill .html{
+    width: 85%;
+    background-color: #deecdf;
+}
+.skill .css{
+    width: 60%;
+    background-color: #acb5c8;
+}
+.skill .js{
+    width: 40%;
+    background-color: #78b3ae;
+}
+.skill .php{
+    width: 75%;
+    background-color: #8c9d82;
+}
+#best{
+    height: 260px;
+    text-align: center;
+    margin-top: 50px;
+}
+#best li{
+    width: 312px;
+    height: 234px;
+    float: left;
+    text-align: center;
+}
+.sprite{
+    width: 64px;
+    height: 64px;
+    background-image: url(../img/img-sprite.png);
+    background-repeat: no-repeat;
+}
+#best .sprite{
+    margin: 0 auto;
+}
+#best .support{
+    background-position: -64px 0;
+}
+#best .solutions{
+    background-position: -128px 0;
+}
+#best h3{
+    margin: 20px 0;
+    font-size: 1.17em;
+}
+#best p{
+    width: 282px;
+    color: #9CA69D;
+    font-weight: 400;
+    margin: 0 auto;
+}
+#social{
+    height: 150px;
+    text-align: center;
+}
+#social li{
+    width: 235px;
+    height: 90px;
+    float: left;
+}
+#social .follows span{
+    color: #B4BEB9;
+    font-size: 40px;
+    font-weight: 600;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#social .sprite{
+    float: left;
+    margin-left: 50px;
+}
+#social .support{
+    background-position: -64px 0;
+}
+#social .solutions{
+    background-position: -128px 0;
+}
+#social .behance{
+    background-position: -192px 0;
+}
+#social p{
+    clear: both;
+    color: #393b3a;
+    margin-top: 20px;
+    font-family: "Nunito-Bold";
+}
+#social h2{
+    margin: 30px 0;
+}
+#contact{
+    height: 400px;
+    background: #deecdf;
+    text-align: center;
+    margin-top: 50px;
+    font-family: "Nunito-Bold";
+}
+#contact h2{
+    padding: 30px 0;
+}
+#contact input{
+    width: 440px;
+    height: 64px;
+    background: #deecdf;
+    outline: none;
+    border: 1px solid #7ca17f;
+    text-indent: 10px;
+    margin-bottom: 10px;
+    font-family: "Nunito-Bold";
+}
+#contact .input{
+    float: left;
+    width: 440px;
+}
+#contact textarea{
+    float: left;
+    width: 440px;
+    height: 215px;
+    border: 1px solid #7ca17f;
+    background: #deecdf;
+    outline: none;
+    resize: none;
+    margin-left: 40px;
+    text-indent: 10px;
+    font-family: "Nunito-Bold";
+}
+#contact button{
+    width: 151px;
+    height: 48px;
+    float: right;
+    margin-right: 80px;
+    background: #393b3a;
+    color: #fff;
+    font-family: "Nunito-Bold";
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;/*鼠标放上去变成小手*/
+    transition: background .5s ease;/*产生5秒的过度效果*/
+}
+#contact button:hover{
+    background: rgb(0, 207, 189);;
+}
+#footer{
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
