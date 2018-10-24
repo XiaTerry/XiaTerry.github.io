@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>夏诺轩 - terry</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Terry,"> 
+    
+    <meta name="author" content="TERYY"> 
+    <link rel="alternative" href="atom.xml" title="夏诺轩" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Mock.js的简单使用</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Mock.js的简单使用</h1>
+        <div class="stuff">
+            <span>十月 12, 2018</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <ol>
+<li><code>mock.js</code>的简单介绍<br>首先我们来简单的介绍一下<code>mock.js</code>。在我们前端开发人员没有得到后端开发人员的后端数据接口的时候，我们通常需要模拟一些简单的数据场景在前端页面，为了前端能在开发结束而没有得到后端数据接口，又能顺利完成前端开发和在得到后端数据后不大幅度修改前端布局。也就是说<code>mock.js</code>能给前端提供的后端数据模拟。</li>
+<li><p><code>mock.js</code>的安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装</span><br><span class="line">npm install mockjs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>mock.js</code>简单使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">//使用mock</span><br><span class="line">import Mock from &apos;mockjs&apos;;</span><br><span class="line">let data = Mock.mock(&#123;</span><br><span class="line">    // 属性 user 的值是一个数组，产出5个数组</span><br><span class="line">    &apos;user|5&apos;: [&#123;</span><br><span class="line">        &apos;name&apos;:&apos;@cname&apos;, //中文名称</span><br><span class="line">        &apos;id|+1&apos;: 1,      // 属性 id 是一个自增数，起始值为 1，每次增 1</span><br><span class="line">        &apos;age|18-28&apos;: 0,   // 18至28以内随机整数, 0只是用来确定类型</span><br><span class="line">        &apos;birthday&apos;: &apos;@date(&quot;yyyy-MM-dd&quot;)&apos;,  // 日期</span><br><span class="line">        &apos;city&apos;: &apos;@city(true)&apos;,   // 中国城市</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line">// 输出结果</span><br><span class="line">console.log(JSON.stringify(data, null, 4));</span><br><span class="line">[&#123;  </span><br><span class="line">    name:李丽,</span><br><span class="line">    id:0,</span><br><span class="line">    age:20,</span><br><span class="line">    birthday:1996-02-03;</span><br><span class="line">    city:北京,</span><br><span class="line">&#125;,</span><br><span class="line">&#123;  </span><br><span class="line">    name:黄海,</span><br><span class="line">    id:1,</span><br><span class="line">    age:22,</span><br><span class="line">    birthday:1994-02-03;</span><br><span class="line">    city:深圳,</span><br><span class="line">&#125;,</span><br><span class="line">&#123;  </span><br><span class="line">    name:李斌,</span><br><span class="line">    id:2,</span><br><span class="line">    age:20,</span><br><span class="line">    birthday:1999-02-03;</span><br><span class="line">    city:西安,</span><br><span class="line">&#125;</span><br><span class="line">&#123;  </span><br><span class="line">    name:王勇,</span><br><span class="line">    id:3,</span><br><span class="line">    age:19,</span><br><span class="line">    birthday:1997-12-03;</span><br><span class="line">    city:成都,</span><br><span class="line">&#125;,</span><br><span class="line">&#123;  </span><br><span class="line">    name:张海,</span><br><span class="line">    id:4,</span><br><span class="line">    age:21,</span><br><span class="line">    birthday:1998-05-03;</span><br><span class="line">    city:上海,</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://sc1.111ttt.cn/2018/1/03/13/396131203208.mp3'></li>
+                    
+                        <li title='1' data-url='http://up.mcyt.net/md5/53/OTk1MDE2NA_Qq4329912.mp3'></li>
+                    
+                        <li title='2' data-url='http://up.mcyt.net/down/43422.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
