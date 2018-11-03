@@ -1,0 +1,96 @@
+html,body,.loader{
+    height: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color: black;
+}
+.loader{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.loader .face{
+    border:3px solid transparent;
+    position: absolute;
+    border-radius:50%;
+}
+
+.loader .face .circle{
+    position: absolute;
+    width:50%;
+    height:1px;
+    background-color: white;
+    top: 50%;
+    right:50%;
+    transform:rotate(135deg);
+    transform-origin:right;
+}
+#circle2{
+    transform:rotate(-45deg);
+}
+.loader .face:nth-child(1){
+    width: 100%;
+    height: 100%;
+    border-top-color:gold;
+    border-left-color:gold;
+    transform:rotate(0deg);
+}
+.loader .face:nth-child(2){
+    width: 70%;
+    height: 70%;
+    border-top-color:lime;
+    border-left-color:lime;
+    transform:rotate(180deg);
+}
+.loader .face .circle::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: gold;
+    left: -5px;
+    top: -5px;
+    border-radius: 50%;
+
+    box-shadow: 0 0 20px gold,
+    0 0 40px gold,
+    0 0 60px gold,
+    0 0 80px gold,
+    0 0 100px gold,
+    0 0 0 5px rgba(255 ,255, 0, .1)
+}
+#circle2::after{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    left: -5px;
+    top: -5px;
+    border-radius: 50%;
+    background-color: lime;
+    box-shadow: 0 0 20px lime,
+    0 0 40px lime,
+    0 0 60px lime,
+    0 0 80px lime,
+    0 0 100px lime,
+    0 0 0 5px rgba(0 ,255, 0, .1)
+}
+
+.loader .face .circle{
+    background-color: transparent;
+}
+.loader .face{
+    animation: rotate 3s linear infinite;
+}
+.loader .face:nth-child(2){
+    animation-direction:reverse;
+}
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}

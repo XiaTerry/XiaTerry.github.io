@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        html,body{
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        #wrapper{
+            width: 600px;
+            height: 250px;
+            background-color: #ffffff;
+        }
+        #wrapper .nav{
+            width: 100%;
+            height: 30px;
+            background-color: #f6f5f5;
+        }
+        #wrapper .nav li{
+            float: left;
+            font-size: 14px;
+            box-sizing: border-box;
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+            cursor:pointer;
+            margin-right: 5px;
+            color: #007;
+        }
+        #wrapper .show{
+            width: 100%;
+            height: 250px;
+            /*background-color: #00336c;*/
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+        #wrapper .show>div{
+            width: 298px;
+            height: 72px;
+            float: left;
+            border-bottom: 1px dashed #aaaaaa;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        #wrapper .pic{
+            float: left;
+            font-size: 12px;
+        }
+        #wrapper .pic img{
+            margin-right:10px;
+        }
+        #wrapper .info{
+            /*float: right;*/
+            font-size: 12px;
+            box-sizing: border-box;
+        }
+        #wrapper .info a:hover{
+            background-color: blue;
+        }
+        #wrapper .info p{
+            margin-left: 5px;
+        }
+        #wrapper .content > div{
+            display: none;
+        }
+        #wrapper .content .showing{
+            display: block;
+        }
+        #wrapper .nav .selected{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="nav">
+        <ul>
+            <li class="selected">生活</li>
+            <li>兴趣</li>
+            <li>文化艺术</li>
+            <li>音乐电影</li>
+            <li>本地</li>
+            <li>其他</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="show showing">
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g12247-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g12238-2.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g14153-10.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g20324-5.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g35813-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g44725-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+        </div>
+        <div class="show">
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g58422-9.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g61581-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g69947-4.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g71386-5.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g71879-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g77374-2.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+        </div>
+        <div class="show">
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g12238-2.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g85862-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g99630-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g111124-3.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g118474-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g131612-4.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+        </div>
+        <div class="show">
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g142641-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g147604-45.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g12247-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g166185-3.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g198988-9.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g199108-3.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+        </div>
+        <div class="show">
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g200545-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g201001-7.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g205089-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g205665-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g209998-4.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g225599-3.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+        </div>
+        <div class="show">
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g232039-6.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g270078-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g324211-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g344822-6.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g361153-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+            <div>
+                <div class="pic">
+                    <a href="http://www.douban.com/group/frenchlifestyle/">
+                        <img alt="法兰西情结: 美酒，美食，美好人生" src="img/g12247-1.jpg">
+                    </a>
+                </div>
+                <div class="info"><A href="http://www.douban.com/group/frenchlifestyle/">法兰西情结:
+                    美酒，美食，...</A> (177)
+                    <P>前两年在上海巧遇巴黎高商的一台湾同学，现顶着美国某大学教...</P>
+                </div>
+            </div>
+        </div>
+    </div>
+<p>豆瓣广告轮播效果，每2秒转换一次</p>
+</div>
+<script src="javascript/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        var index = 0;
+        $('.nav li').on('click',function(){
+            index = $(this).index();
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('.content > div').eq($(this).index()).addClass('showing').siblings().removeClass('showing');
+        });
+        timer = setInterval(function () {
+            index++;
+            if(index>$('.nav li').length-1){
+                index = 0;
+            }
+            $('.nav li').eq(index).addClass('selected').siblings().removeClass('selected');
+            $('.content > div').eq(index).addClass('showing').siblings().removeClass('showing');
+        },2000);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>夏诺轩 - terry</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Terry,"> 
+    <meta name="description" content="javascript中数组使用和基本方法
+数组定义：一个存储元素的线性集合，元素可以通过数组的索引来任意存取。
+数组使用：
+12345678910111. var numbers = [];//此时,"> 
+    <meta name="author" content="TERYY"> 
+    <link rel="alternative" href="atom.xml" title="夏诺轩" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">js中的数组方法</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">js中的数组方法</h1>
+        <div class="stuff">
+            <span>十月 25, 2018</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h4 id="javascript中数组使用和基本方法"><a href="#javascript中数组使用和基本方法" class="headerlink" title="javascript中数组使用和基本方法"></a>javascript中数组使用和基本方法</h4><ol>
+<li>数组定义：一个存储元素的线性集合，元素可以通过数组的索引来任意存取。</li>
+<li><p>数组使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. var numbers = [];//此时你将得到一个长度为0的数组;</span><br><span class="line">console.log(numbers.length);//在控制台输出0;</span><br><span class="line"></span><br><span class="line">//直接在[]中放入一组数，达到直接数值，常用在数组元素较少的时候；</span><br><span class="line">2. var numbers = [1,2,3,4,5,6];</span><br><span class="line">console.log(numbers.length);//输出6</span><br><span class="line"></span><br><span class="line">//通过调用构造函数来创建数组;此时可以传入不同类型的值，</span><br><span class="line">//如果只床传入一个整数则是创建了一个数组大小为改整数的数组</span><br><span class="line">3. var numbers = new Array(1,2,3,4,5);</span><br><span class="line">console.log(numbers.length);//输出5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组遍历(通过循环遍历)<br></p><h5>3.1通过while循环</h5><p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,2,3,4,5,6];</span><br><span class="line">var i = 0;</span><br><span class="line">while(i &lt; numbers.length)&#123;</span><br><span class="line">    console.log(numbers[i])</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p></p><h5>3.2通过do{ }–while()循环</h5><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,2,3,4,5,6];</span><br><span class="line">var i = 0;</span><br><span class="line">do&#123; </span><br><span class="line">    console.log(numbers[i]);</span><br><span class="line">    i++;</span><br><span class="line">&#125;while(i &lt; numbers.length);</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h5>3.3通过for(){}循环</h5><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,2,3,4,5,6];</span><br><span class="line">var i;</span><br><span class="line">for(i = 0;i &lt; numbers.length;i++)&#123;</span><br><span class="line">    console.log(numbers[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p></p>
+<ol start="4">
+<li>数组常用方法。<br><h5>4.1向数组添加元素</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.push()</span><br><span class="line">var nums = [1,2,3,4];</span><br><span class="line">nums.push(5);</span><br><span class="line">alert(nums);//1,2,3,4,5</span><br><span class="line">2.unshift()可将元素添加到数组的开头</span><br><span class="line">var nums = [2,3,4];</span><br><span class="line">var newnum = 1;</span><br><span class="line">nums.unshift(newnum);//可以添加多个元素uums.unshift(1,2,3);</span><br><span class="line">alert(nums);//1,2,3,4</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p></p><h5>4.2删除数组中的元素</h5><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.pop()</span><br><span class="line">var nums = [2,3,4,5,9];</span><br><span class="line">nums.pop();</span><br><span class="line">print(nums);//2,3,4,5</span><br><span class="line">2.shift()可删除数组的第一个元素</span><br><span class="line">var nums = [9,1,2,3,4,5];</span><br><span class="line">nums.shift();</span><br><span class="line">alert(nums);//1,2,3,4,5</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h5>4.3从数组中间添加和删除元素</h5><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.添加splice()(1).希望开始添加位置(2).需要删除元素个数(0的时候为添加元素)(3).想要添加的数组元素</span><br><span class="line">var nums = [1,2,3,7,8,9];</span><br><span class="line">var newItems = [4,5,6];</span><br><span class="line">nums.splice(3,0,newItems);</span><br><span class="line">alert(nums);//1,2,3,4,5,6,7,8,9</span><br><span class="line">2.删除splice()</span><br><span class="line">var nums = [1,2,3,100,200,300,400,4,5];</span><br><span class="line">nums.splice(3,4);</span><br><span class="line">alert(nums);//1,2,3,4,5</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h5>4.4合并多个数组</h5><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.contact()合并多个数组</span><br><span class="line">var cis = [&quot;Mike&quot;,&quot;Clayton&quot;,&quot;Terrill&quot;,&quot;Danny&quot;,&quot;Jennifer&quot;];</span><br><span class="line">var dmp = [&quot;Raymond&quot;,&quot;Cynthia&quot;,&quot;Bryan&quot;];</span><br><span class="line">var itDiv = cis.contact(dmp);</span><br><span class="line">alert(itDiv);//Mike,Clayton,Terrill,Danny,Jennifer,Raymond,Cynthia,Bryan</span><br></pre></td></tr></table></figure><p></p>
+<p></p><h5>4.5数组排序</h5><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.reverse()将数组中元素的顺序进行翻转。</span><br><span class="line">var nums = [1,2,3,4,5];</span><br><span class="line">nums.reverse();</span><br><span class="line">alert(nums);//5,4,3,2,1</span><br><span class="line">2,sort()按照字典顺序对数组排序,一般在比较是传入比较函数compare();</span><br><span class="line">function compare(num1,num2)&#123;</span><br><span class="line">    return num1-num2;</span><br><span class="line">&#125;</span><br><span class="line">var nums = [3,1,2,100,4,200];</span><br><span class="line">nums.sort(compare);</span><br><span class="line">alert(nums);//1,2,3,4,100,200</span><br></pre></td></tr></table></figure><p></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://sc1.111ttt.cn/2018/1/03/13/396131203208.mp3'></li>
+                    
+                        <li title='1' data-url='http://up.mcyt.net/md5/53/OTk1MDE2NA_Qq4329912.mp3'></li>
+                    
+                        <li title='2' data-url='http://up.mcyt.net/down/43422.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#javascript中数组使用和基本方法"><span class="toc-number">1.</span> <span class="toc-text">javascript中数组使用和基本方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">3.1通过while循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">3.2通过do{ }–while()循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">3.3通过for(){}循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">4.1向数组添加元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.</span> <span class="toc-text">4.2删除数组中的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.6.</span> <span class="toc-text">4.3从数组中间添加和删除元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.7.</span> <span class="toc-text">4.4合并多个数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.8.</span> <span class="toc-text">4.5数组排序</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电池充电</title>
+    <style>
+        html ,body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:linear-gradient(to bottom,teal,aqua);
+        }
+        .battery{
+            width: 200px;
+            height: 100px;
+            border:15px solid midnightblue;
+            border-radius:10px;
+            position: relative;
+            background-image: linear-gradient(to right,whitesmoke,whitesmoke);
+            background-repeat: no-repeat;
+            background-size: 30% 80%;
+            background-position:5px 50%;/*水平5px，垂直50%*/
+            animation:charge 5s linear infinite;
+        }
+        .battery::after{
+            content: '';
+            width: 20px;
+            height: 50px;
+            background-color: midnightblue;
+            position: absolute;
+            top: 25px;
+            right: -35px;
+            border-radius: 0 5px 5px 0;
+        }
+        @keyframes charge{
+            from{
+                background-size: 10% 80%;
+            }
+            to{
+                background-size: 95% 80%;
+            }
+        }
+        /*Js动画内容
+        .battery #charge{
+            position: absolute;
+            width: 10px;
+            height: 80px;
+            background-color: whitesmoke;
+            top: 10px;
+            left: 5px;
+        }*/
+    </style>
+</head>
+<body>
+<div class="battery">
+    <div id="charge"></div>
+</div>
+<!--Js做的类似的动画效果-->
+<!--<script>-->
+    <!--var oCharge = document.getElementById('charge');-->
+    <!--setInterval(function(){-->
+        <!--if(oCharge.offsetWidth>=oCharge.parentNode.offsetWidth-50){-->
+            <!--oCharge.style.width =0;-->
+        <!--}-->
+        <!--oCharge.style.width = oCharge.offsetWidth + 10 + 'px';-->
+    <!--}, 500)-->
+<!--</script>-->
+</body>
+</html>

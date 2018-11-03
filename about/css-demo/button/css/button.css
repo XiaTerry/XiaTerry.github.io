@@ -1,0 +1,46 @@
+html,body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6fee34;
+}
+.box{
+    width: 200px;
+    height: 60px;
+    border:2px solid black;
+    box-sizing:border-box;
+    text-align:center;
+    line-height:60px;
+    font-size:30px;
+}
+.box span{
+    display:inline-block;
+    color:blue;
+}
+.box span:nth-child(2n-1){
+    transform:translateY(-100%);
+}
+.box span:nth-child(2n){
+    transform:translateY(100%);
+}
+.box span::before{
+    content:attr(data-text);
+    color: #ff0036;
+    position:absolute;
+}
+.box span:nth-child(2n-1)::before{
+    transform:translateY(100%);
+}
+.box span:nth-child(2n)::before{
+    transform:translateY(-100%);
+}
+.box{
+    overflow: hidden;
+}
+.box:hover span{
+    transform:translateY(0);
+}
+.box span{
+    transition: 0.5s;
+}

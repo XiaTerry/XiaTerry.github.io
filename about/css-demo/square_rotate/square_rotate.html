@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>矩形旋转</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            display:flex;
+            height: 100%;
+            justify-content: center;
+            align-items:center;
+            background-color:black;
+        }
+        .loader{
+            width: 150px;
+            height: 150px;
+            position: relative;
+        }
+        .loader span{
+            position:absolute;
+            border:10px solid #cccccc;
+            box-sizing: border-box;
+            animation:rotating linear infinite;
+        }
+        .loader span:nth-child(1){
+            width: 100%;
+            height: 100%;
+            animation-duration: 4s;
+            z-index: 3;
+        }
+        .loader span:nth-child(2){
+            width: 70%;
+            height: 70%;
+            margin: 15%;
+            animation-duration: 2s;
+            z-index: 2;
+        }
+        .loader span:nth-child(3){
+            width: 40%;
+            height: 40%;
+            margin: 30%;
+            animation-duration:1s;
+            z-index: 1;
+        }
+        .loader span::after,
+        .loader span::before{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 50%;
+            background-color: gold;
+        }
+        .loader span::after{
+            top: -10px;
+            left: -10px;
+        }
+        .loader span::before{
+            bottom: -10px;
+            right: -10px;
+        }
+        @keyframes rotating{
+            from{
+                transform:rotateY(0deg);
+            }
+            to{
+                transform:rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>

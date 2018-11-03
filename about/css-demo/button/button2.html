@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3d按钮特效</title>
+    <style>
+        html,body{
+            height: 100%;
+            justify-content:center;
+            align-items:center;
+            display: flex;
+            background-color:skyblue;
+        }
+        .box{
+            width: 250px;
+            height: 85px;
+            background: linear-gradient(to right, gold, darkorange);
+            text-align: center;
+            line-height:85px;
+            font-size:40px;
+            color: white;
+            letter-spacing: 8px;
+            border:1px solid darkgoldenrod;
+            border-radius: 40px;
+            transform:  perspective(500px) rotateY(-15deg);
+            transition: all 0.5s;
+            position:relative;
+            overflow: hidden;
+            cursor:pointer;
+            text-shadow: 6px 3px 2px rgba(0,0,0,.2);
+            box-shadow: 2px 0 0 5px rgba(0,0,0,.2);
+        }
+        .box:hover{
+            perspective:500px;
+            transform:  rotateY(15deg);
+            text-shadow: -6px 3px 2px rgba(0,0,0,.2);
+            box-shadow:-2px 0 0 5px rgba(0,0,0,.2);
+        }
+        .box::before{
+            content: '';
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right,transparent,white,transparent);
+        }
+        .box::before{
+            left: -100%;
+            transition: all 0.5s;
+        }
+        .box:hover::before{
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    button
+</div>
+</body>
+</html>

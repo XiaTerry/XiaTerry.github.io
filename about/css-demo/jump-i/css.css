@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.loader{
+    width: 5em;
+    height: 13em;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.loader::before{
+    content: '';
+    width: 5em;
+    height: 5em;
+    background-color: orangered;
+    border-radius: 50%;
+    animation: ball-jumping 2s ease-in-out infinite;
+}
+@keyframes ball-jumping{
+    20%, 80%{
+        transform: translateY(-2em)
+    }
+    50%{
+        transform: translateY(1.5em);
+    }
+}
+.loader::after{
+    content:'';
+    width: 5em;
+    height: 8em;
+    background-color: orange;
+    border-radius:0.5em;
+    animation: rect-rotating 2s ease-in-out infinite;
+}
+@keyframes rect-rotating{
+    50%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
